@@ -1,0 +1,36 @@
+[server]
+    #debug or release
+    RunMode = "release"
+    HttpPort = ":10086"
+    Env = "debug"
+#log
+[Log]
+    #debug info warn error
+    logLevel ="error"
+    #日志文件存储位置
+    logFile = "./logs/sync_tag.log"
+    isDebug = 1
+    #日志文件大小 M
+    maxSize = 100
+    #最多保留多少备份 0 是全部时间
+    maxBackups = 0
+    #保留多少天的日志
+    maxAge = 30
+    #是否压缩
+    compress = false
+
+# mysql dev配置
+[mysqlMaster]
+    Host="rm-2ze4pmb4ib065bg51go.mysql.rds.aliyuncs.com:3306"
+    Password = "Panda_pre"
+    User = "panda_pre"
+    Maxlifetime = 15
+    MaxidleConn = 20
+    MaxOpenConn = 40
+    Charset = "utf8mb4"
+    Database= "sensor_tags_pre"
+# 虎鲸相关配置
+[Whale]
+    APPID = "si_xyz1113_test"
+    Secret = "97e5b3ddbcb4b1bd2faf9349c575d771"
+    URL = "http://39.107.88.21:20001/crm/"

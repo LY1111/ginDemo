@@ -1,0 +1,44 @@
+[server]
+    #debug or release
+    RunMode = "debug"
+    HttpPort = ":10086"
+    Env = "debug"
+#log
+[log]
+    #debug info warn error
+    logLevel ="debug"
+    #日志文件存储位置
+    logFile = "./logs/test.log"
+    #日志文件大小 M
+    maxSize = 100
+    #最多保留多少备份 0 是全部时间
+    maxBackups = 0
+    #保留多少天的日志
+    maxAge = 30
+    #是否压缩
+    compress = false
+
+# mysql dev配置
+[mysqlMaster]
+    Host="rm-2ze4pmb4ib065bg51go.mysql.rds.aliyuncs.com:3306"
+    Password = "Panda_pre"
+    User = "panda_pre"
+    Maxlifetime = 15
+    MaxidleConn = 20
+    MaxOpenConn = 40
+    Charset = "utf8mb4"
+    [mysqlMaster.Databases]
+        Dss="dss_pre"
+        tag="sensor_tags_pre"
+
+#[mysqlMaster]
+#    Host="rm-2ze0p2zhp0q6ih9b0lo.mysql.rds.aliyuncs.com"
+#    Password = "Panda_dev"
+#    User = "panda_dev"
+#    Maxlifetime = 15
+#    MaxidleConn = 20
+#    MaxOpenConn = 40
+#    Charset = "utf8mb4"
+#    [mysqlMaster.Databases]
+#        Dss="dss_dev"
+#        tag="sensor_tags_dev"
