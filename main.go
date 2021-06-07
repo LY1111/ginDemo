@@ -7,7 +7,6 @@ import (
     "data_binding_backend/initialize/mysql"
     _ "data_binding_backend/initialize/viper"
     "data_binding_backend/router"
-    "fmt"
     "github.com/gin-gonic/gin"
     "net/http"
     "os"
@@ -16,7 +15,6 @@ import (
 )
 
 func init() {
-    fmt.Println("main")
     // 初始化log日志
     _ = logger.InitLogger(&config.Config.Log)
     logger.Debugf("log config:%+v", config.Config.Log)
@@ -41,7 +39,7 @@ func main() {
 
     go func() {
         if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-            logger.Fatalf("listen: %s\n", err)
+            logger.Errorf("listen: %s\n", err)
         }
     }()
 

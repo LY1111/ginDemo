@@ -10,7 +10,6 @@ import (
 )
 
 func init() {
-    fmt.Println("viper")
     var err error
     configPath := flag.String("f", "./config/config_dev.toml", "config file path error")
     flag.Parse()
